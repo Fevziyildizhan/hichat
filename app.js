@@ -12,6 +12,11 @@ const server = http.createServer(app)
 const io = socketio(server);
 app.use(express.static(path.join(__dirname,'public')));
 
+
+app.get('/', (req,res)=>{
+     res.sendFile('index.html')
+})
+
 const botname = 'URAL'
 
 io.on('connection', (socket)=>{
